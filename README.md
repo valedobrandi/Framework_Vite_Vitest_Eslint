@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
+# Vite + React + TypeScript + TailwindCSS + DaisyUI + Testing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a minimal template to start a React project using Vite, TypeScript, and TailwindCSS. It includes configuration for ESLint with Airbnb rules and support for testing with Vitest.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```plaintext
+.eslintrc.json
+.gitignore
+eslint.config.js
+index.html
+package.json
+postcss.config.js
+public/
+README.md
+setupTests.ts
+src/
+    __tests__/
+        App.test.tsx
+    App.css
+    App.tsx
+    assets/
+    index.css
+    main.tsx
+    vite-env.d.ts
+tailwind.config.js
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Available Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+In the project directory, you can run:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### `npm run dev`
+
+Starts the development server.
+
+### `npm run build`
+
+Builds the project for production.
+
+### `npm run lint`
+
+Runs ESLint to find and fix problems in the code.
+
+### `npm run preview`
+
+Previews the production build of the project.
+
+### `npm run test`
+
+Runs tests using Vitest.
+
+### `npm run coverage`
+
+Generates the test coverage report.
+
+## ESLint Configuration
+
+The project uses ESLint configuration with Airbnb rules, including support for TypeScript and React. The configuration can be found in the [`.eslintrc.json`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2F.eslintrc.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22.eslintrc.json%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/.eslintrc.json") file.
+
+## TypeScript Configuration
+
+The project is configured to use TypeScript with options defined in the [`tsconfig.json`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2Ftsconfig.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22tsconfig.json%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/tsconfig.json"), [`tsconfig.app.json`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2Ftsconfig.app.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22tsconfig.app.json%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/tsconfig.app.json"), and [`tsconfig.node.json`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2Ftsconfig.node.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22tsconfig.node.json%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/tsconfig.node.json") files.
+
+## Vite Configuration
+
+The Vite configuration is defined in the [`vite.config.ts`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2Fvite.config.ts%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22vite.config.ts%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/vite.config.ts") file. It includes support for React and configurations for testing with Vitest.
+
+## TailwindCSS Configuration
+
+The project uses TailwindCSS for styling. The configuration can be found in the [`tailwind.config.js`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2Ftailwind.config.js%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22tailwind.config.js%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/tailwind.config.js") file.
+
+## Testing
+
+Tests are written using Testing Library and Vitest. The test configuration file is [`setupTests.ts`](command:_github.copilot.openSymbolInFile?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fbernardoalbuquerque%2FDocumentos%2Fprojetos%2FFramework_Vite_Vitest_Eslint%2Fvite-project%2FsetupTests.ts%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22setupTests.ts%22%2C%226a5944ee-3a13-4583-b758-25df4dd1d90c%22%5D "/home/bernardoalbuquerque/Documentos/projetos/Framework_Vite_Vitest_Eslint/vite-project/setupTests.ts").
+
+## License
+
+This project is licensed under the MIT License.
