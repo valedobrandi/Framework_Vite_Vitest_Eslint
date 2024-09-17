@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "remove": "rm -rf .gitignore .git"
+    "remove": "rm -rf .gitignore .git README.md"
   },
   "dependencies": {
     "eslint-config-airbnb-typescript": "^18.0.0",
